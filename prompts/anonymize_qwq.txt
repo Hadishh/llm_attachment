@@ -1,0 +1,77 @@
+You are provided with a dialogue containing references to teams, people, locations, and literary influences, along with a set of related knowledge triplets. Your task is to anonymize the dialogue and the knowledge by replacing all real-world names with anonymized entity identifiers that include both a type (e.g., Team, Person, Place, LiteraryInfluence) and an ID. Be sure to create a clear mapping table, update all occurrences in the dialogue, and replace entries in the knowledge triplets accordingly.
+
+Instructions:
+1. Mapping Table:
+   - First, scan the dialogue and the knowledge triplets to identify all unique entities (e.g., team names, person names, places, literary influences).
+   - For each entity, define:
+     - An anonymized ID. For example:
+       - Films: F1, F2, …
+       - Teams: T1, T2, …
+       - People: P1, P2, …
+       - Places: L1, L2, …
+       - Literary Influences or Authors: LI1, LI2, …
+     - Its type (Team, Person, Place, LiteraryInfluence, Film, etc).
+   - Create a mapping table that shows each entity's original name, its anonymized ID, and its type.
+
+2. Anonymize the Dialogue:
+   - Replace every occurrence of a real-world entity in the dialogue with its corresponding anonymized ID.
+   - Ensure that informal or abbreviated references (if any) are also mapped correctly.
+
+3. Anonymize the Knowledge Triplets:
+   - For each knowledge triplet, replace each entity with its corresponding anonymized ID based on the mapping table.
+
+4. Output Format:
+   - Mapping Table: Present as a clear table with columns for ID, Original Entity, and Type.
+   - Anonymized Dialogue: Provide the full dialogue with entity mentions replaced by their anonymized IDs.
+   - Anonymized Knowledge Triplets: List the anonymized triplets exactly as in the original input, but with IDs in place of the original entity names.
+
+Example In-Context (from a previous task):
+
+Mapping Table Example:
+| **ID** | **Original Entity**                   | **Type**  |
+|--------|---------------------------------------|-----------|
+| F1     | Iron Man                              | Film      |
+| P1     | Robert Downey Jr.                     | Person    |
+| F2     | Zodiac (Crime Fiction Film)           | Film      |
+| P2     | Jake Gyllenhaal                       | Person    |
+| F3     | End of Watch                          | Film      |
+| P3     | David Ayer                            | Person    |
+| G1     | Thriller                              | Genre     |
+| G2     | Crime Fiction                         | Genre     |
+
+Anonymized Dialogue Example:
+- S1: Do you like [F1]?
+- S2: Sure do! [P1] is a favorite.
+- S1: Yes, I like him too. Did you know he also was in [F2], a [G2] film?
+- S2: I like [G2]! Didn’t know [P1] was in there. [P2] starred as well.
+- S1: So he did? He also starred in [F3]. Have you ever seen that movie?
+- S2: Yes, I have! I like films directed by [P3]. How about you?
+- S1: I have not. What genre is [F3]?
+- S2: It's a [G1] and [G2] film as well.
+- S1: I will make sure to check it out—I like [G1] films. Thank you!
+- S2: Welcome!
+
+Anonymized Knowledge Triplets Example:
+1. ["[F1]", "starred_actors", "[P1]"]
+2. ["[F2]", "starred_actors", "[P1]"]
+3. ["[F2]", "starred_actors", "[P2]"]
+4. ["[F3]", "~starred_actors", "[P2]"]
+5. ["[F3]", "written_by", "[P3]"]
+6. ["[F3]", "has_genre", "[G1]"]
+
+Now, please perform the anonymization for the following query:
+
+------------------------------
+Dialogue:
+{history}
+
+Knowledge:
+{external_kg}
+------------------------------
+
+Ensure that your final output includes:
+- A Mapping Table with all identified entities, their anonymized IDs, and their types.
+- The complete dialogue with anonymized entities.
+- The knowledge triplets with all entities replaced by their anonymized IDs.
+
+<think>

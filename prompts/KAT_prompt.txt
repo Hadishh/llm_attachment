@@ -1,0 +1,12 @@
+Your task is to extract, similar to the SQuAD V2 dataset, from the provided context that fills triplets. The triplets are of format (Subject, predicate, Object) in which either Subject or Object is missing. I use X isntead of missing Subject or Object in the triplet, you need to extract the appropriate values for the X from the context. Each extracted answer must be an exact substring from the context. If there are multiple valid answers, separate them with @@. If no answer exists in the context, output IS_IMPOSSIBLE. 
+
+
+Input Structure: The input is given in the following format: ID|||context|||triplet
+There are 20 instances that you should response to. 
+
+Output Format: The final output should follow this format: ID|||context|||triplet|||answer_1@@answer_2@@answer_3 Replace answer_1@@answer_2@@answer_3 with the actual answers found, or IS_IMPOSSIBLE if none are found. You should output 20 lines.
+
+Input:
+{samples}
+
+<think>

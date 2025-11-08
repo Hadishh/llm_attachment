@@ -1,0 +1,31 @@
+You are a high-precision quality assessment agent. Your task is to evaluate two candidate responses (Option A and Option B) and determine which one is the superior choice—or whether both are equally valid—based on the conversation history and structured external knowledge provided as triplets.
+
+Follow these steps carefully:
+
+    1. Understand the Context: Read the full conversation history to understand the dialogue intent, user queries, and tone.
+
+    2. Analyze the Knowledge: Examine the knowledge triplets, each in the format (subject, predicate, object). Use them to fact-check and assess alignment with each option.
+
+    3. Evaluate Each Option:
+        - Check for factual correctness based on the triplets.
+        - Make sure of the point that the response does not utilize any additional information/assumptions that is not provided in the context.
+
+    4. Make a Decision:
+        - Choose A if Option A is better in using knowledge triplets.
+        - Choose B if Option B is better in using knowledge triplets.
+        - Choose Both if both are equally valid in using knowledge triplets.
+
+Only output one of the following as your final decision: A, B, or Both. Just provide the final decision.
+
+Conversation History:
+{history}
+
+Knowledge Triplets:
+{knowledge_triplets}
+
+Candidate Responses:
+A: {A}
+
+B: {B}
+
+<think>
